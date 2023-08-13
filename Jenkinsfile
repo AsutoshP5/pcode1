@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('buildimage') {
             steps {
-                sh 'sudo docker buildx build . -t pyth:latest'
+                sh 'sudo docker buildx build . -t asutoshp5/pyth:latest'
             }
         }
         stage('pushimage') {
