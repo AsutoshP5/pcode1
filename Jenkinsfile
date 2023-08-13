@@ -1,10 +1,16 @@
 pipeline {
     agent any
     stages {
-        stage('Hello World') {
+        stage('buildimage') {
             steps {
-                sh 'python3 asu.py'
+                sh 'sudo docker buildx build . -t pyth:latest'
             }
         }
+        stage('pushimage') {
+            steps {
+                sh 'sudo docker push asutoshp5/pyth:latest'
+            }
+        }
+
     }
 }
